@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estratificação de Risco em Saúde Mental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Estratificação de risco em saúde mental – versão reduzida</h1>
+
+        <form id="patient-data-form">
+            <h2>Dados do Paciente e Profissional</h2>
+            <div class="form-group">
+                <label for="patient-name">Nome do Paciente:</label>
+                <input type="text" id="patient-name" required>
+            </div>
+            <div class="form-group">
+                <label for="patient-dob">Data de Nascimento do Paciente:</label>
+                <input type="date" id="patient-dob" required>
+            </div>
+            <div class="form-group">
+                <label for="current-date">Data do Dia:</label>
+                <input type="date" id="current-date" required>
+            </div>
+            <div class="form-group">
+                <label for="professional-name">Nome do Profissional que está preenchendo:</label>
+                <input type="text" id="professional-name" required>
+            </div>
+        </form>
+
+        <p class="highlight-text fixed-effect">Devem ser consideradas as manifestações sintomáticas ocorridas somente nos últimos 12 meses.</p>
+
+        <h2>Sinais e Sintomas</h2>
+        <form id="risk-assessment-form">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Grupo</th>
+                        <th>Pergunta</th>
+                        <th>SIM</th>
+                        <th>NÃO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="12" class="group-name">GRUPO 1</td>
+                        <td>Ansiedade com ou sem sensação de pânico (4)</td>
+                        <td><input type="radio" name="q1_1" value="4" required></td>
+                        <td><input type="radio" name="q1_1" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Insônia ou hipersonia (2)</td>
+                        <td><input type="radio" name="q1_2" value="2"></td>
+                        <td><input type="radio" name="q1_2" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Fobia (medo intenso de algo sem risco real) (2)</td>
+                        <td><input type="radio" name="q1_3" value="2"></td>
+                        <td><input type="radio" name="q1_3" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Crises conversivas e/ou dissociativas (2)</td>
+                        <td><input type="radio" name="q1_4" value="2"></td>
+                        <td><input type="radio" name="q1_4" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Alterações do apetite ou comportamento alimentar (2)</td>
+                        <td><input type="radio" name="q1_5" value="2"></td>
+                        <td><input type="radio" name="q1_5" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Preocupação excessiva com o peso ou forma corporal (2)</td>
+                        <td><input type="radio" name="q1_6" value="2"></td>
+                        <td><input type="radio" name="q1_6" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Hipocondria e/ou queixas físicas infundadas (2)</td>
+                        <td><input type="radio" name="q1_7" value="2"></td>
+                        <td><input type="radio" name="q1_7" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Pensamento/comportamento obsessivo-compulsivo (2)</td>
+                        <td><input type="radio" name="q1_8" value="2"></td>
+                        <td><input type="radio" name="q1_8" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Pensamento de inutilidade e/ou sentimento de culpa (4)</td>
+                        <td><input type="radio" name="q1_9" value="4"></td>
+                        <td><input type="radio" name="q1_9" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Tristeza persistente com perda de interesse e prazer e/ou desesperança (4)</td>
+                        <td><input type="radio" name="q1_10" value="4"></td>
+                        <td><input type="radio" name="q1_10" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Prejuízo da atividade sexual (2)</td>
+                        <td><input type="radio" name="q1_11" value="2"></td>
+                        <td><input type="radio" name="q1_11" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Desorientação temporal e/ou espacial (2)</td>
+                        <td><input type="radio" name="q1_12" value="2"></td>
+                        <td><input type="radio" name="q1_12" value="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="13" class="group-name">GRUPO 2</td>
+                        <td>Ideação suicida sem planejamento (4)</td>
+                        <td><input type="radio" name="q2_1" value="4" required></td>
+                        <td><input type="radio" name="q2_1" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Ideação suicida com planejamento ou recente tentativa de suicídio (10)</td>
+                        <td><input type="radio" name="q2_2" value="10"></td>
+                        <td><input type="radio" name="q2_2" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Apatia com ou sem isolamento social (4)</td>
+                        <td><input type="radio" name="q2_3" value="4"></td>
+                        <td><input type="radio" name="q2_3" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Humor instável com impulsividade ou destrutividade (6)</td>
+                        <td><input type="radio" name="q2_4" value="6"></td>
+                        <td><input type="radio" name="q2_4" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Heteroagressividade e/ou autoagressividade (8)</td>
+                        <td><input type="radio" name="q2_5" value="8"></td>
+                        <td><input type="radio" name="q2_5" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Desinibição social, sexual ou perda de pudor (4)</td>
+                        <td><input type="radio" name="q2_6" value="4"></td>
+                        <td><input type="radio" name="q2_6" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Hiperatividade motora (4)</td>
+                        <td><input type="radio" name="q2_7" value="4"></td>
+                        <td><input type="radio" name="q2_7" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Humor elevado, expansivo, irritável ou eufórico (4)</td>
+                        <td><input type="radio" name="q2_8" value="4"></td>
+                        <td><input type="radio" name="q2_8" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Delírio (pensamento) (8)</td>
+                        <td><input type="radio" name="q2_9" value="8"></td>
+                        <td><input type="radio" name="q2_9" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Alucinação (sensopercepção) (8)</td>
+                        <td><input type="radio" name="q2_10" value="8"></td>
+                        <td><input type="radio" name="q2_10" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Alteração do curso e/ou da forma do pensamento (6)</td>
+                        <td><input type="radio" name="q2_11" value="6"></td>
+                        <td><input type="radio" name="q2_11" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Perda da capacidade crítica da realidade (8)</td>
+                        <td><input type="radio" name="q2_12" value="8"></td>
+                        <td><input type="radio" name="q2_12" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Alteração da memória (2)</td>
+                        <td><input type="radio" name="q2_13" value="2"></td>
+                        <td><input type="radio" name="q2_13" value="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="6" class="group-name">GRUPO 3</td>
+                        <td>Delirium tremens (10)</td>
+                        <td><input type="radio" name="q3_1" value="10" required></td>
+                        <td><input type="radio" name="q3_1" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Sinais ou sintomas de abstinência ao uso continuado de álcool e/ou drogas (8)</td>
+                        <td><input type="radio" name="q3_2" value="8"></td>
+                        <td><input type="radio" name="q3_2" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Incapacidade de redução e controle do consumo de álcool e/ou drogas (8)</td>
+                        <td><input type="radio" name="q3_3" value="8"></td>
+                        <td><input type="radio" name="q3_3" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Comportamento de risco, para si ou terceiros, sob efeito de álcool e/ou drogas (8)</td>
+                        <td><input type="radio" name="q3_4" value="8"></td>
+                        <td><input type="radio" name="q3_4" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Tolerância ao efeito do consumo de álcool e/ou drogas (6)</td>
+                        <td><input type="radio" name="q3_5" value="6"></td>
+                        <td><input type="radio" name="q3_5" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Uso abusivo de álcool e/ou drogas (8)</td>
+                        <td><input type="radio" name="q3_6" value="8"></td>
+                        <td><input type="radio" name="q3_6" value="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="8" class="group-name">GRUPO 4</td>
+                        <td>Dificuldade de compreender e/ou transmitir informação verbal manifesta no desenvolvimento infantil (4)</td>
+                        <td><input type="radio" name="q4_1" value="4" required></td>
+                        <td><input type="radio" name="q4_1" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Movimentos corporais ou comportamentais repetitivos, bizarros ou paralisados (4)</td>
+                        <td><input type="radio" name="q4_2" value="4"></td>
+                        <td><input type="radio" name="q4_2" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Dificuldade para adquirir e desenvolver as habilidades escolares (4)</td>
+                        <td><input type="radio" name="q4_3" value="4"></td>
+                        <td><input type="radio" name="q4_3" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Dificuldade para adquirir e desenvolver as habilidades motoras (4)</td>
+                        <td><input type="radio" name="q4_4" value="4"></td>
+                        <td><input type="radio" name="q4_4" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Severa dificuldade na interação social e às mudanças na rotina (8)</td>
+                        <td><input type="radio" name="q4_5" value="8"></td>
+                        <td><input type="radio" name="q4_5" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Desatenção com interrupção prematura de tarefas e/ou deixando tarefas inacabadas (2)</td>
+                        <td><input type="radio" name="q4_6" value="2"></td>
+                        <td><input type="radio" name="q4_6" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Comportamento provocativo, desafiador e/ou opositor persistente (6)</td>
+                        <td><input type="radio" name="q4_7" value="6"></td>
+                        <td><input type="radio" name="q4_7" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Comportamentos ou reações emocionais que não correspondem ao esperado para a idade biológica (4)</td>
+                        <td><input type="radio" name="q4_8" value="4"></td>
+                        <td><input type="radio" name="q4_8" value="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="13" class="group-name">GRUPO 5</td>
+                        <td>Resistência, refratariedade, não adesão ao tratamento (4)</td>
+                        <td><input type="radio" name="q5_1" value="4" required></td>
+                        <td><input type="radio" name="q5_1" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Recorrência ou recaída (após 2 meses de remissão dos sintomas) (4)</td>
+                        <td><input type="radio" name="q5_2" value="4"></td>
+                        <td><input type="radio" name="q5_2" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Exposição continuada ao estresse ou evento traumático (4)</td>
+                        <td><input type="radio" name="q5_3" value="4"></td>
+                        <td><input type="radio" name="q5_3" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Precariedade de suporte familiar e/ou social (4)</td>
+                        <td><input type="radio" name="q5_4" value="4"></td>
+                        <td><input type="radio" name="q5_4" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Testemunha de violência (2)</td>
+                        <td><input type="radio" name="q5_5" value="2"></td>
+                        <td><input type="radio" name="q5_5" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Autor ou Vítima de violência interpessoal (6)</td>
+                        <td><input type="radio" name="q5_6" value="6"></td>
+                        <td><input type="radio" name="q5_6" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Perda da autonomia (6)</td>
+                        <td><input type="radio" name="q5_7" value="6"></td>
+                        <td><input type="radio" name="q5_7" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Perda da capacidade funcional/ocupacional devido agravo de saúde (4)</td>
+                        <td><input type="radio" name="q5_8" value="4"></td>
+                        <td><input type="radio" name="q5_8" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Vulnerabilidade social (2)</td>
+                        <td><input type="radio" name="q5_9" value="2"></td>
+                        <td><input type="radio" name="q5_9" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Histórico familiar de transtorno mental / dependência química / suicídio (2)</td>
+                        <td><input type="radio" name="q5_10" value="2"></td>
+                        <td><input type="radio" name="q5_10" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Comorbidade ou outra condição crônica de saúde (4)</td>
+                        <td><input type="radio" name="q5_11" value="4"></td>
+                        <td><input type="radio" name="q5_11" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Faixa etária < 18 anos e > de 60 anos (6)</td>
+                        <td><input type="radio" name="q5_12" value="6"></td>
+                        <td><input type="radio" name="q5_12" value="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Abandono e/ou atraso escolar (2)</td>
+                        <td><input type="radio" name="q5_13" value="2"></td>
+                        <td><input type="radio" name="q5_13" value="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" id="calculate-risk-btn">CALCULAR GRAU DE RISCO</button>
+        </form>
+
+        <div id="risk-result" style="display: none;">
+            <div class="gauge-container">
+                <div class="gauge">
+                    <div class="gauge-sector yellow"></div>
+                    <div class="gauge-sector orange"></div>
+                    <div class="gauge-sector red"></div>
+                    <div class="gauge-pointer" id="gauge-pointer"></div>
+                </div>
+            </div>
+            <div class="result-info">
+                <p>Pontuação Total: <span id="total-score"></span></p>
+                <p id="risk-level"></p>
+            </div>
+        </div>
+
+        <div class="info-tables">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pontuação</th>
+                        <th>Risco</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0 a 40</td>
+                        <td>Baixo Risco</td>
+                    </tr>
+                    <tr>
+                        <td>41 a 70</td>
+                        <td>Médio Risco</td>
+                    </tr>
+                    <tr>
+                        <td>71 a 240</td>
+                        <td>Alto Risco</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="soft-table">
+                <tbody>
+                    <tr>
+                        <td><strong>Condições especiais:</strong></td>
+                        <td>Gestação e maternidade recente (há menos de um ano); grupos vulneráveis (ex: indígena, LGBTQIA+, migrante, pessoa em situação de rua, população exposta a agrotóxicos), deficiência intelectual moderada ou severa.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Eventos Agudos:</strong></td>
+                        <td>Tentativa de suicídio; crise; surto psicótico.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="footer-note">• fonte: estratificação de risco em saúde mental – versão reduzida do estado do paraná (secretaria de estado da saúde – sesa).</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
