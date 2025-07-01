@@ -21,6 +21,13 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
+.logo {
+    display: block;
+    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona um espaçamento abaixo */
+    max-width: 50%; /* Garante que a imagem seja responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
 /* Formulário de Dados do Paciente */
 #patient-data-form {
     background-color: #e9f5ff;
@@ -112,8 +119,8 @@ td input[type="radio"] {
     display: block;
 }
 
-/* Botão de Cálculo */
-#calculate-risk-btn {
+/* Botão de Cálculo e Impressão */
+#calculate-risk-btn, #print-button {
     display: block;
     width: 300px;
     padding: 15px 25px;
@@ -128,9 +135,18 @@ td input[type="radio"] {
     transition: background-color 0.3s ease;
 }
 
-#calculate-risk-btn:hover {
+#calculate-risk-btn:hover, #print-button:hover {
     background-color: #218838;
 }
+
+#print-button {
+    background-color: #007bff; /* Cor diferente para o botão de impressão */
+}
+
+#print-button:hover {
+    background-color: #0056b3;
+}
+
 
 /* Gráfico de Velocímetro */
 .gauge-container {
@@ -249,7 +265,7 @@ td input[type="radio"] {
     .container {
         padding: 15px;
     }
-    #calculate-risk-btn {
+    #calculate-risk-btn, #print-button {
         width: 100%;
         font-size: 1em;
     }
@@ -266,4 +282,114 @@ input:focus, button:focus {
 
 td input[type="radio"] {
     cursor: pointer;
+}
+
+/*
+--- IMPRESSÃO ---
+*/
+@media print {
+    body {
+        background-color: #fff; /* Fundo branco para impressão */
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        box-shadow: none; /* Remove a sombra na impressão */
+        border: none; /* Remove bordas desnecessárias */
+        padding: 0;
+        max-width: 100%; /* Ocupa a largura total da página */
+    }
+
+    /* Ocultar elementos que não são para impressão */
+    #patient-data-form,
+    #risk-assessment-form,
+    .highlight-text,
+    .info-tables,
+    .footer-note,
+    .gauge-container, 
+    h2,
+    #print-button {
+        display: none !important;
+    }
+
+    /* Mostrar a área de impressão */
+    #print-area {
+        display: block !important;
+        width: 100%;
+        padding: 20px; 
+        box-sizing: border-box;
+    }
+
+    .print-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .logo-print {
+        max-width: 200px; /* Tamanho ajustado para impressão */
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .print-header h2 {
+        color: #000; /* Cor preta para o título na impressão */
+        margin: 0;
+    }
+
+    .print-section {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #ccc; /* Linha divisória suave */
+    }
+
+    .print-section h3 {
+        color: #555; /* Cor para os subtítulos da impressão */
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .print-section p {
+        margin: 5px 0;
+        font-size: 0.95em;
+    }
+
+    .print-table-assessment {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    .print-table-assessment th,
+    .print-table-assessment td {
+        border: 1px solid #eee; /* Bordas mais claras */
+        padding: 8px;
+        text-align: left;
+        font-size: 0.9em;
+    }
+
+    .print-table-assessment th {
+        background-color: #f8f8f8; /* Fundo suave para o cabeçalho da tabela */
+        color: #333;
+        font-weight: bold;
+    }
+
+    .print-table-assessment tr:nth-child(even) {
+        background-color: #fcfcfc;
+    }
+
+    .footer-note-print {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 0.8em;
+        color: #888;
+    }
+
+    #risk-level {
+        -webkit-print-color-adjust: exact; /* Para navegadores WebKit (Chrome, Safari) */
+        print-color-adjust: exact;         /* Padrão para outros navegadores */
+        color: rgb(0, 0, 0) !important; /* Garante que o texto seja branco para contraste */
+    }
+
 }
